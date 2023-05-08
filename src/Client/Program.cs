@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazonspider.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace Amazonspider.Client
                 Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
                 Application.ThreadException += Application_ThreadException;
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+                Application.ApplicationExit += Application_ApplicationExit;
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -31,6 +33,11 @@ namespace Amazonspider.Client
                 log4net.ILog log = log4net.LogManager.GetLogger("testApp.Logging");//获取一个日志记录器 
                 log.Error("系统全局异常--asd", ex);
             }
+        }
+
+        private static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            //Bootstrap.Dispose();
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

@@ -154,24 +154,34 @@ namespace Amazonspider.Client
         {
             //MIXSQ-MQHMY-DPXZH-YHNLH
             // 1.创建key验证对象
-            var ValidateAKey = new Validate();
-            //2.设置密钥
-            ValidateAKey.secretPhase = "Camouflage";
-            //3.设置要验证的key，注意，这是上面代码生成的key1内容
-            ValidateAKey.Key = txtRegisterCode.Text;
+            //    var ValidateAKey = new Validate();
+            //    //2.设置密钥
+            //    ValidateAKey.secretPhase = "Camouflage";
+            //    //3.设置要验证的key，注意，这是上面代码生成的key1内容
+            //    ValidateAKey.Key = txtRegisterCode.Text;
 
-            if (!ValidateAKey.IsValid || ValidateAKey.IsExpired)
-            {
-                MessageBox.Show("软件验证失败，暂时无法使用");
-                btnStart.Enabled = false;
-                btnStop.Enabled = false;
-            }
-            else
-            {
-                this.ParentForm.Text += $"--剩余使用期限：{ValidateAKey.DaysLeft}天";
-            }
+            //    if (!ValidateAKey.IsValid || ValidateAKey.IsExpired)
+            //    {
+            //        MessageBox.Show("软件验证失败，暂时无法使用");
+            //        btnStart.Enabled = false;
+            //        btnStop.Enabled = false;
+            //    }
+            //    else
+            //    {
+            //        this.ParentForm.Text += $"--剩余使用期限：{ValidateAKey.DaysLeft}天";
+            //    }
+        }
+        WebBrowser webBrowser;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            webBrowser = new WebBrowser();
+            webBrowser.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var cookies = webBrowser.GetCookieEvent();
+        }
     }
 
     /// <summary>

@@ -17,7 +17,6 @@
             {
                 components.Dispose();
             }
-            Bootstrap.Dispose();
             base.Dispose(disposing);
         }
 
@@ -39,14 +38,12 @@
             this.btsSaveSetting = new System.Windows.Forms.Button();
             this.gbxRunInfo = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.runtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pluginnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.simulatornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.runmsgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.runInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbxRunLog = new System.Windows.Forms.GroupBox();
             this.listboxLog = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnAddAsin = new System.Windows.Forms.Button();
@@ -158,11 +155,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.runtimeDataGridViewTextBoxColumn,
-            this.pluginnameDataGridViewTextBoxColumn,
-            this.simulatornameDataGridViewTextBoxColumn,
-            this.runmsgDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.runInfoBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
@@ -172,38 +164,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1443, 311);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // runtimeDataGridViewTextBoxColumn
-            // 
-            this.runtimeDataGridViewTextBoxColumn.DataPropertyName = "runtime";
-            this.runtimeDataGridViewTextBoxColumn.HeaderText = "运行时间";
-            this.runtimeDataGridViewTextBoxColumn.Name = "runtimeDataGridViewTextBoxColumn";
-            this.runtimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pluginnameDataGridViewTextBoxColumn
-            // 
-            this.pluginnameDataGridViewTextBoxColumn.DataPropertyName = "pluginname";
-            this.pluginnameDataGridViewTextBoxColumn.HeaderText = "采集模块";
-            this.pluginnameDataGridViewTextBoxColumn.Name = "pluginnameDataGridViewTextBoxColumn";
-            this.pluginnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // simulatornameDataGridViewTextBoxColumn
-            // 
-            this.simulatornameDataGridViewTextBoxColumn.DataPropertyName = "simulatorname";
-            this.simulatornameDataGridViewTextBoxColumn.HeaderText = "采集编号";
-            this.simulatornameDataGridViewTextBoxColumn.Name = "simulatornameDataGridViewTextBoxColumn";
-            this.simulatornameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // runmsgDataGridViewTextBoxColumn
-            // 
-            this.runmsgDataGridViewTextBoxColumn.DataPropertyName = "runmsg";
-            this.runmsgDataGridViewTextBoxColumn.HeaderText = "运行信息";
-            this.runmsgDataGridViewTextBoxColumn.Name = "runmsgDataGridViewTextBoxColumn";
-            this.runmsgDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // runInfoBindingSource
-            // 
-            this.runInfoBindingSource.DataSource = typeof(Amazonspider.Core.RunInfo);
             // 
             // gbxRunLog
             // 
@@ -230,6 +190,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.btnStop);
             this.groupBox4.Controls.Add(this.btnStart);
             this.groupBox4.Controls.Add(this.btnAddAsin);
@@ -242,6 +204,26 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "操作";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(611, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "保存登陆状态";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(530, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "登陆亚马逊";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnStop
             // 
@@ -344,5 +326,7 @@
         private System.Windows.Forms.TextBox txtSoftCode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btsSaveSetting;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
